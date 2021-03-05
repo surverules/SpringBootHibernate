@@ -15,7 +15,7 @@ public class Controller {
     @Autowired
     StudentService studentService;
 
-    @GetMapping
+
     public String sayHello(){
         return "hello World";
     }
@@ -46,5 +46,15 @@ public class Controller {
     public void deleteStudent(@RequestParam(name = "ID") String id){
         System.out.println("Student for deleting purpose: " + id);
         studentService.deleteStudent(Integer.parseInt(id));
+    }
+
+    @GetMapping("students/findstudent/{id}")
+    public Student findbyId(@PathVariable int id){
+        return studentService.findByID(id);
+    }
+
+    @PostMapping("students/insupdstudent")
+    public void insertorupdateStudent(@RequestBody Student student){
+        studentService.insertOrupdateStudent(student);
     }
 }

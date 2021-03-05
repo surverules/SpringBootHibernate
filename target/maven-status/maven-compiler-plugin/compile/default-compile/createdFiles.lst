@@ -2,6 +2,7 @@ com/ubs/app/service/StudentService.class
 com/ubs/app/entities/Student.class
 com/ubs/app/config/HibernateConfig.class
 com/ubs/app/dao/StudentDaoImpl.class
+com/ubs/app/dao/StudentDaoImplV1.class
 com/ubs/app/Application.class
 com/ubs/app/controller/Controller.class
 com/ubs/app/dao/StudentDao.class

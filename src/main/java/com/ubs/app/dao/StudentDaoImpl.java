@@ -7,12 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.Query;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
+@Transactional
 public class StudentDaoImpl implements StudentDao{
 
     @Autowired
@@ -62,6 +64,5 @@ public class StudentDaoImpl implements StudentDao{
         session.update(student);
         System.out.println("Received Student for Update: " + student.toString());
         transaction.commit();
-
     }
 }
